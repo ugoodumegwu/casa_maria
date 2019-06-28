@@ -1,0 +1,110 @@
+{% extends 'casas_site/index.html'%}
+
+{% load static %}
+
+<style type="text/css">
+	.background_image{
+		background-image: url('{% static "images/contact.jpg" %}');
+	}
+	.input-control{
+		width:100%
+	}
+
+</style>
+
+{% block content %}
+
+	<div class="home">
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Slide -->
+				<div class="slide">
+					<img src="{% static 'images/contact.jpg'%}" alt="Snow" style="width:100%; height:100%">
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content text-center">
+										<div class="home_title">About Us</div>
+										<sub>24 hours service, reach us at your own convenience</sub>
+										<div class="booking_form_container">
+											<form action="#" class="booking_form">
+												<div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+													<div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+														<div><input type="text" class="datepicker booking_input booking_input_a booking_in" placeholder="Check in" required="required"></div>
+														<div><input type="text" class="datepicker booking_input booking_input_a booking_out" placeholder="Check out" required="required"></div>
+														<div><input type="number" class="booking_input booking_input_b" placeholder="Children" required="required"></div>
+														<div><input type="number" class="booking_input booking_input_b" placeholder="Room" required="required"></div>
+													</div>
+													<div><button class="booking_button trans_200">Book Now</button></div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Contact -->
+<br><br><br><br><br><br>
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+
+				<!-- Contact Content -->
+
+				<div class="col-lg-6">
+					<div class="contact_content">
+						<div class="contact_title"><h2>Get in touch</h2></div>
+						<div class="contact_list">
+							<ul>
+								<li>{{address_1}}</li>
+								<li>{{number}}</li>
+								<li>{{email}}</li>
+							</ul>
+						</div>
+						<p> {{contact_us_message}} </p>
+<br>
+						<div class="contact_form_container">
+							<form action="#" class="contact_form" id="contact_form">
+								{% csrf_token %}
+								<table>
+								{{ form.as_table }}
+								</table>
+									<input type = 'submit' class="contact_button" value=" send us your feedback ">
+							</form>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- Google Map -->
+				<div class="col-xl-5 col-lg-6 offset-xl-1">
+					<div class="contact_map">
+
+						<!-- Google Map -->
+
+						<div class="map">
+							<div id="google_map" class="google_map">
+								<div class="map_container">
+									<div id="map"></div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
